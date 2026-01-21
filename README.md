@@ -76,8 +76,6 @@ Global Nexus is a comprehensive web application designed to streamline import an
     VITE_FIREBASE_STORAGE_BUCKET=YOUR FIREBASE CONFIG
     VITE_FIREBASE_MESSAGING_SENDER_ID=YOUR FIREBASE CONFIG
     VITE_FIREBASE_APP_ID=YOUR FIREBASE CONFIG
-    VITE_USER_EMAIL=welcome@gmail.com
-    VITE_USER_PASSWORD=Welcome123
 
     # ... other firebase configs
     REACT_APP_BACKEND_URL=https://global-nexus-backend.vercel.app
@@ -95,3 +93,6 @@ Global Nexus is a comprehensive web application designed to streamline import an
 
 2.  **Ensure the backend server is running:**
     This application communicates with a backend server, which is assumed to be running at `https://global-nexus-backend.vercel.app`. Make sure your backend is properly set up and running for full functionality.
+
+    <!-- VITE_USER_EMAIL=welcome@gmail.com
+    VITE_USER_PASSWORD=Welcome123 -->

@@ -170,7 +170,6 @@ const ProductDetails = () => {
               >
                 Import Now
               </button>
-              {/* Open the modal using document.getElementById('ID').showModal() method */}
               <dialog
                 ref={modalProduct}
                 className="modal modal-bottom sm:modal-middle"

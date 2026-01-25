@@ -76,7 +76,6 @@ const Navbar = () => {
                   />{" "}
                 </svg>
               </div>
-              {/* The dropdown menu itself does not need motion unless you want it to animate opening */}
               <ul
                 tabIndex={-1}
                 className="menu menu-sm dropdown-content bg-[#173A75] rounded-box z-1 mt-3 w-36 p-2 shadow"

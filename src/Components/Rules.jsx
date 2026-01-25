@@ -33,11 +33,14 @@ const Rules = () => {
 
   return (
     <div className="py-6 sm:py-8">
+      <h2 className="text-center pb-5 sm:pb-7 font-bold text-2xl sm:text-4xl">
+        Trade Rules & Requirements
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 w-[95%] mx-auto px-4 sm:px-6">
         {rules.map((rule, ind) => (
           <div
             key={ind}
-            className="bg-white shadow-md flex flex-col justify-start items-center sm:p-4 border border-gray-100 rounded-lg transition-all duration-300 hover:shadow-lg min-h-[14rem]"
+            className="bg-gray-100 shadow-md flex flex-col justify-start items-center sm:p-4 border border-gray-100 rounded-lg transition-all duration-300 hover:shadow-lg min-h-56"
           >
             <figure className="mb-3 sm:mb-4">
               <img

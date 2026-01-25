@@ -24,6 +24,9 @@ const Information = () => {
 
   return (
     <div className="w-[95%] mx-auto my-6 sm:my-8 px-4 sm:px-6">
+      <h2 className="text-center font-bold text-2xl sm:text-4xl">
+        Why Global Nexus?
+      </h2>
       <div className="relative bg-[url('./GlobalNexus.png')] bg-contain bg-no-repeat bg-center min-h-[20rem] sm:min-h-[30rem] md:min-h-[40rem] w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full pt-4 sm:pt-8">
           {information.map((info, ind) => (

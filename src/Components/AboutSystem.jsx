@@ -3,11 +3,11 @@ import React from "react";
 const AboutSystem = () => {
   return (
     <div className="w-[95%] mx-auto my-6 sm:my-8 px-4 sm:px-6">
-      <div className="relative bg-[url('/About.png')] bg-cover bg-no-repeat bg-center rounded-xl min-h-[24rem] sm:min-h-[32rem] md:min-h-[40rem] w-full overflow-hidden">
+      <div className="relative bg-[url('/About.png')] bg-cover bg-no-repeat bg-center rounded-xl min-h-96 sm:min-h-128 md:min-h-160 w-full overflow-hidden">
         <div className="absolute inset-0 bg-[#081C40] opacity-85"></div>
 
         <div className="relative z-10 p-4 sm:p-8 text-white flex flex-col justify-start h-full">
-          <h1 className="pb-4 sm:pb-5 font-bold text-xl sm:text-3xl text-[#FF6F00]">
+          <h1 className="pb-4 sm:pb-5 font-bold text-2xl sm:text-4xl text-[#FF6F00]">
             About the System
           </h1>
 

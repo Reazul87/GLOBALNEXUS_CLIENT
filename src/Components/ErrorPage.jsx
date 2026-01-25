@@ -12,7 +12,6 @@ const ErrorPage = () => {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        {/* Icon */}
         <div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -21,7 +20,6 @@ const ErrorPage = () => {
           <FiAlertCircle className="w-20 h-20 text-[#FF6F00] mx-auto mb-4" />
         </div>
 
-        {/* Error Code */}
         <h1
           className="text-6xl md:text-8xl font-extrabold text-[#173A75] mb-2"
           initial={{ opacity: 0, y: -20 }}
@@ -31,7 +29,6 @@ const ErrorPage = () => {
           404
         </h1>
 
-        {/* Message */}
         <p
           className="text-lg md:text-xl text-gray-700 mb-6"
           initial={{ opacity: 0 }}
@@ -41,7 +38,6 @@ const ErrorPage = () => {
           Something went wrong!
         </p>
 
-        {/* Button */}
         <div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,7 +52,6 @@ const ErrorPage = () => {
           </Link>
         </div>
 
-        {/* Decorative Dots */}
         <div
           className="absolute top-4 right-4 text-[#FF6F00]/20"
           animate={{ rotate: 360 }}

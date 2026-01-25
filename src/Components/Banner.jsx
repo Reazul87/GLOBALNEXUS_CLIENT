@@ -72,7 +72,6 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      {/* </div> */}
       <div className="mb-[50px]"></div>
     </>
   );

@@ -5,6 +5,11 @@ import Banner from "../../Components/Banner";
 import Rules from "../../Components/Rules";
 import ProductCard from "../../Components/ProductCard";
 import { Link, useLoaderData } from "react-router";
+import ServicesSection from "./Shared/ServicesSection";
+import TradeMapSection from "./Shared/TradeMapSection";
+import Testimonials from "./Shared/Testimonials";
+import FAQAccordion from "./Shared/FAQAccordion";
+import Newsletter from "./Shared/Newsletter";
 
 const Home = () => {
   const latestProducts = useLoaderData();
@@ -16,7 +21,7 @@ const Home = () => {
       </div>
 
       <div className="w-[95%] mx-auto">
-        <h2 className="text-center text-xl md:text-3xl font-bold mt-10">
+        <h2 className="text-center text-2xl md:text-4xl font-bold mt-10">
           Latest Products
         </h2>
 
@@ -37,9 +42,14 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      <ServicesSection></ServicesSection>
+      <Testimonials></Testimonials>
       <Rules />
       <AboutSystem />
       <Information />
+      <FAQAccordion></FAQAccordion>
+      <Newsletter></Newsletter>
+      <TradeMapSection></TradeMapSection>
     </div>
   );
 };

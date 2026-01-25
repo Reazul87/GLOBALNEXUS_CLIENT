@@ -247,7 +247,6 @@ const MyExports = () => {
           </div>
         )}
 
-        {/* Update Modal */}
         <dialog
           ref={modalProduct}
           className="modal modal-bottom sm:modal-middle"

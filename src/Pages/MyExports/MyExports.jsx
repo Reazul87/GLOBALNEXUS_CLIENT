@@ -26,7 +26,7 @@ const MyExports = () => {
     if (!user?.email) return;
 
     fetch(
-      `https://global-nexus-server.vercel.app/my-exports?email=${user.email}`,
+      `${import.meta.env.VITE_BACKEND_URL}/my-exports?email=${user.email}`,
       {
         headers: {
           authorization: `Bearer ${user.accessToken}`,
@@ -47,7 +47,7 @@ const MyExports = () => {
   }, [user, refetch, setLoading]);
 
   const handleExportDelete = (id) => {
-    fetch(`https://global-nexus-server.vercel.app/export-product/${id}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/export-product/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${user.accessToken}`,
@@ -132,7 +132,7 @@ const MyExports = () => {
 
     try {
       const response = await fetch(
-        `https://global-nexus-server.vercel.app/update-export/${productId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/update-export/${productId}`,
         {
           method: "PATCH",
           headers: {

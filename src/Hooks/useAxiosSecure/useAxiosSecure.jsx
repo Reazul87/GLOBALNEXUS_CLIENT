@@ -4,7 +4,7 @@ import useAuth from "../useAuth/useAuth";
 import axios from "axios";
 
 const axiosSecure = axios.create({
-  baseURL: "https://global-nexus-server.vercel.app",
+  baseURL: `${import.meta.env.VITE_BACKEND_URL}`,
   // baseURL: "http://localhost:5000",
 });
 

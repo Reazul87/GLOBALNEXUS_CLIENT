@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         index: true,
         Component: Home,
         loader: () =>
-          fetch("https://global-nexus-server.vercel.app/latest-products"),
+          fetch(`${import.meta.env.VITE_BACKEND_URL}/latest-products`),
       },
       {
         path: "/login",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: "/all-products",
         element: <AllProducts></AllProducts>,
-        loader: () => fetch("https://global-nexus-server.vercel.app/products"),
+        loader: () => fetch(`${import.meta.env.VITE_BACKEND_URL}/products`),
       },
       {
         path: "/product-details/:id",

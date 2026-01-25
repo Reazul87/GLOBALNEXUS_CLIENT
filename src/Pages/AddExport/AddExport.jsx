@@ -100,7 +100,7 @@ const AddExport = () => {
       exported_by: user.email,
     };
 
-    fetch("https://global-nexus-server.vercel.app/products", {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/products`, {
       method: "post",
       headers: {
         "content-type": "application/json",

@@ -17,7 +17,7 @@ const ProductDetails = () => {
   const importButtonRef = useRef(null);
 
   useEffect(() => {
-    fetch(`https://global-nexus-backend.vercel.app/product-details/${id}`, {
+    fetch(`https://global-nexus-server.vercel.app/product-details/${id}`, {
       headers: {
         authorization: `Bearer ${user.accessToken}`,
       },
@@ -71,10 +71,10 @@ const ProductDetails = () => {
       rating,
       import_quantity,
       imported_by: user.email,
-      createdAt: new Date().toISOString(),
+      importedAt: new Date().toISOString(),
     };
 
-    fetch(`https://global-nexus-backend.vercel.app/import-product/${_id}`, {
+    fetch(`https://global-nexus-server.vercel.app/import-product/${_id}`, {
       method: "post",
       headers: {
         "content-type": "application/json",

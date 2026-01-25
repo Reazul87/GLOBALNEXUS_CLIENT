@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { Eye, EyeClosed } from "lucide-react";
 import { AuthContext } from "../../Context/AuthContext";
 import toast from "react-hot-toast";
+import Loading from "../../Components/Loading";
 
 const Login = () => {
   const { signInUser, setLoading, loading, signInWithGoogle } =
@@ -89,11 +90,12 @@ const Login = () => {
   };
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
+    return <Loading></Loading>
+    // return (
+    //   <div className="flex justify-center items-center h-screen">
+    //     <span className="loading loading-spinner loading-lg"></span>
+    //   </div>
+    // );
   }
 
   return (

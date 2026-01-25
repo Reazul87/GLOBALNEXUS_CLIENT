@@ -13,12 +13,12 @@ const MyImports = () => {
   const { setLoading, user } = useContext(AuthContext);
   useEffect(() => {
     fetch(
-      `https://global-nexus-backend.vercel.app/my-imports?email=${user.email}`,
+      `https://global-nexus-server.vercel.app/my-imports?email=${user.email}`,
       {
         headers: {
           authorization: `Bearer ${user.accessToken}`,
         },
-      }
+      },
     )
       .then((res) => res.json())
       .then((data) => {
@@ -31,7 +31,7 @@ const MyImports = () => {
   }, [user, refetch]);
 
   const handleImportDelete = (id) => {
-    fetch(`https://global-nexus-backend.vercel.app/import-product/${id}`, {
+    fetch(`https://global-nexus-server.vercel.app/import-product/${id}`, {
       method: "delete",
       headers: {
         "content-type": "application/json",

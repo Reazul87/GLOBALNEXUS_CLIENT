@@ -6,9 +6,10 @@ import { AuthContext } from "../Context/AuthContext";
 import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { FaGear, FaUser } from "react-icons/fa6";
 import toast from "react-hot-toast";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 const Navbar = () => {
-  const { user, signOutUser, loading } = useContext(AuthContext);
+  const { user, signOutUser, loading, setLoading } = useContext(AuthContext);
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "light";
   });
@@ -41,6 +42,7 @@ const Navbar = () => {
 
   const handleSignOutUser = () => {
     signOutUser().then(() => {
+      setLoading(false);
       toast.success("Log out successful");
     });
   };
@@ -96,6 +98,12 @@ const Navbar = () => {
           </div>
 
           <div className="navbar-end gap-3">
+            <input
+              onChange={(e) => handleTheme(e.target.checked)}
+              type="checkbox"
+              defaultChecked={localStorage.getItem("theme") === "dark"}
+              className="toggle text-white/80"
+            />
             {loading ? (
               <span className="loading loading-spinner loading-md text-yellow-400"></span>
             ) : user ? (
@@ -120,24 +128,26 @@ const Navbar = () => {
                   tabIndex="-1"
                   className="menu  menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
                 >
-                  <div className=" pb-3 border-b border-b-gray-200">
-                    <li className="text-sm font-bold">{user.displayName}</li>
-                    <li className="text-xs">{user.email}</li>
+                  <div className=" pb-2 border-b border-b-gray-200">
+                    <li className="text-md font-bold">
+                      {user.displayName || "Welcome"}
+                    </li>
+                    <li className="text-sm">{user.email}</li>
                   </div>
-                  <li className="mt-3">
-                    <a>
-                      <FaUser /> Profile
-                    </a>
+                  <li className="mt-1">
+                    <Link to={"/dashboard/profile"}>
+                      <FaUser size={15} /> Profile
+                    </Link>
                   </li>
-                  <input
-                    onChange={(e) => handleTheme(e.target.checked)}
-                    type="checkbox"
-                    defaultChecked={localStorage.getItem("theme") === "dark"}
-                    className="toggle"
-                  />
+                  <li>
+                    <Link to={"/dashboard"}>
+                      <MdOutlineDashboardCustomize size={15} />
+                      <span>Dashboard</span>
+                    </Link>
+                  </li>
                   <li>
                     <a>
-                      <FaGear /> Settings
+                      <FaGear size={15} /> Settings
                     </a>
                   </li>
                   <li>
@@ -145,7 +155,7 @@ const Navbar = () => {
                       onClick={handleSignOutUser}
                       className={`btn btn-xs text-left text-white mt-2.5 bg-gradient-to-r from-[#FF974D] to-[#FF6F00] hover:from-[#FF6F00] hover:to-[#FF974D]`}
                     >
-                      <IoLogOut /> Logout
+                      <IoLogOut size={15} /> Logout
                     </button>
                   </li>
                 </ul>

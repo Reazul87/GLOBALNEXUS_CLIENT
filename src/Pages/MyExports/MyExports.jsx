@@ -5,6 +5,7 @@ import { HiOutlineMapPin } from "react-icons/hi2";
 import RightDate from "../../Components/RightDate";
 import CurrencyChange from "../../Components/CurrencyChange";
 import toast from "react-hot-toast";
+import Loading from "../../Components/Loading";
 
 const MyExports = () => {
   const [products, setProducts] = useState([]);
@@ -25,7 +26,7 @@ const MyExports = () => {
     if (!user?.email) return;
 
     fetch(
-      `https://global-nexus-backend.vercel.app/my-exports?email=${user.email}`,
+      `https://global-nexus-server.vercel.app/my-exports?email=${user.email}`,
       {
         headers: {
           authorization: `Bearer ${user.accessToken}`,
@@ -46,7 +47,7 @@ const MyExports = () => {
   }, [user, refetch, setLoading]);
 
   const handleExportDelete = (id) => {
-    fetch(`https://global-nexus-backend.vercel.app/export-product/${id}`, {
+    fetch(`https://global-nexus-server.vercel.app/export-product/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${user.accessToken}`,
@@ -131,7 +132,7 @@ const MyExports = () => {
 
     try {
       const response = await fetch(
-        `https://global-nexus-backend.vercel.app/update-export/${productId}`,
+        `https://global-nexus-server.vercel.app/update-export/${productId}`,
         {
           method: "PATCH",
           headers: {
@@ -167,9 +168,10 @@ const MyExports = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 my-7">
         {loading ? (
-          <div className="col-span-full flex justify-center">
-            <span className="loading loading-spinner loading-lg text-yellow-400"></span>
-          </div>
+          <Loading></Loading>
+          // <div className="col-span-full flex justify-center">
+          //   <span className="loading loading-spinner loading-lg text-yellow-400"></span>
+          // </div>
         ) : products.length > 0 ? (
           products.map((product) => (
             <div

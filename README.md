@@ -50,7 +50,7 @@ Global Nexus is a comprehensive web application designed to streamline import an
 
 - Node.js (LTS version recommended)
 - npm or yarn
-- A running backend server (as indicated by `https://global-nexus-backend.vercel.app` in the fetch requests).
+- A running backend server (as indicated by `https://global-nexus-server.vercel.app` in the fetch requests).
 
 ### Installation
 
@@ -78,7 +78,7 @@ Global Nexus is a comprehensive web application designed to streamline import an
     VITE_FIREBASE_APP_ID=YOUR FIREBASE CONFIG
 
     # ... other firebase configs
-    REACT_APP_BACKEND_URL=https://global-nexus-backend.vercel.app
+    REACT_APP_BACKEND_URL=https://global-nexus-server.vercel.app
     ```
 
 ### Running the Application
@@ -92,7 +92,7 @@ Global Nexus is a comprehensive web application designed to streamline import an
     The application should open in your browser at `http://localhost:3000` (or another port if 3000 is in use).
 
 2.  **Ensure the backend server is running:**
-    This application communicates with a backend server, which is assumed to be running at `https://global-nexus-backend.vercel.app`. Make sure your backend is properly set up and running for full functionality.
+    This application communicates with a backend server, which is assumed to be running at `https://global-nexus-server.vercel.app`. Make sure your backend is properly set up and running for full functionality.
 
     <!-- VITE_USER_EMAIL=welcome@gmail.com
     VITE_USER_PASSWORD=Welcome123 -->

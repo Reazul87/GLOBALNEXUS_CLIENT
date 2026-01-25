@@ -149,7 +149,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <style jsx global>{`
+      <style>{`
         .swiper-wrapper {
           display: flex;
           align-items: stretch;

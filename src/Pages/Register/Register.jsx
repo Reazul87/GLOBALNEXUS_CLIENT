@@ -4,6 +4,7 @@ import { FaGoogle } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import { Eye, EyeClosed } from "lucide-react";
 import { AuthContext } from "../../Context/AuthContext";
+import Loading from "../../Components/Loading";
 
 const Register = () => {
   const {
@@ -92,11 +93,12 @@ const Register = () => {
   };
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
+    return <Loading></Loading>
+    // return (
+    //   <div className="flex justify-center items-center h-screen">
+    //     <span className="loading loading-spinner loading-lg"></span>
+    //   </div>
+    // );
   }
   return (
     <div className="card bg-base-100 w-full mx-auto max-w-sm shrink-0 shadow-xl my-10 border border-gray-100">

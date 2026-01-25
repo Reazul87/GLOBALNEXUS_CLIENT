@@ -59,7 +59,7 @@ const AddExport = () => {
     }
     if (!countryContain.test(productCountry)) {
       return toast.error(
-        "Country name can only contain letters, spaces, hyphens, or apostrophes"
+        "Country name can only contain letters, spaces, hyphens, or apostrophes",
       );
     }
 
@@ -75,7 +75,7 @@ const AddExport = () => {
     }
     if (!ratingRegex.test(ratingCheck)) {
       return toast.error(
-        "Rating must have at most one decimal place (e.g., 4.6)"
+        "Rating must have at most one decimal place (e.g., 4.6)",
       );
     }
 
@@ -100,7 +100,7 @@ const AddExport = () => {
       exported_by: user.email,
     };
 
-    fetch("https://global-nexus-backend.vercel.app/products", {
+    fetch("https://global-nexus-server.vercel.app/products", {
       method: "post",
       headers: {
         "content-type": "application/json",

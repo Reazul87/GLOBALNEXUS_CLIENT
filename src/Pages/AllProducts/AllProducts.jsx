@@ -17,7 +17,7 @@ const AllProducts = () => {
     const searching = e.target.search.value;
     setLoadingProducts(true);
 
-    fetch(`https://global-nexus-backend.vercel.app/search?name=${searching}`)
+    fetch(`https://global-nexus-server.vercel.app/search?name=${searching}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

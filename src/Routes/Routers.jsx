@@ -11,6 +11,9 @@ import Loading from "../Components/Loading";
 import ProductDetails from "../Components/ProductDetails";
 import PrivateRouter from "./PrivateRouter";
 import ErrorPage from "../Components/ErrorPage";
+import DashboardLayout from "../DashboardLayout/DashboardLayout";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import Profile from "../Pages/Dashboard/Shared/Profile";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +26,7 @@ const router = createBrowserRouter([
         index: true,
         Component: Home,
         loader: () =>
-          fetch("https://global-nexus-backend.vercel.app/latest-products"),
+          fetch("https://global-nexus-server.vercel.app/latest-products"),
       },
       {
         path: "/login",
@@ -36,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: "/all-products",
         element: <AllProducts></AllProducts>,
-        loader: () => fetch("https://global-nexus-backend.vercel.app/products"),
+        loader: () => fetch("https://global-nexus-server.vercel.app/products"),
       },
       {
         path: "/product-details/:id",
@@ -54,14 +57,6 @@ const router = createBrowserRouter([
           </PrivateRouter>
         ),
       },
-      // {
-      //   path: "/import-details/:id",
-      //   element: (
-      //     <PrivateRouter>
-      //       <ImportedDetails></ImportedDetails>
-      //     </PrivateRouter>
-      //   ),
-      // },
       {
         path: "/my-imports",
         element: (
@@ -77,6 +72,36 @@ const router = createBrowserRouter([
             <AddExport></AddExport>
           </PrivateRouter>
         ),
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRouter>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRouter>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "my-exports",
+        element: <MyExports></MyExports>,
+      },
+      {
+        path: "my-imports",
+        element: <MyImports></MyImports>,
+      },
+      {
+        path: "add-export",
+        element: <AddExport></AddExport>,
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
       },
     ],
   },
